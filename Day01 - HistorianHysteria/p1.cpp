@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 int main() {
     vector<int> left = {};
     vector<int> right = {};
@@ -22,6 +21,7 @@ int main() {
         left.push_back(a);
         right.push_back(b);
     }
+    file.close();
 
     sort(left.begin(), left.end());
     sort(right.begin(), right.end());

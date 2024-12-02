@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 int main() {
     vector<int> left = {};
 
@@ -22,7 +21,7 @@ int main() {
         iss >> a >> b;
 
         left.push_back(a);
-        
+
         // Ensure value exists in map for later use
         if (rightMap.find(a) == rightMap.end()) {
             rightMap[a] = 0;
@@ -35,6 +34,7 @@ int main() {
         }
     }
 
+    file.close();
 
     int total = 0;
     for (int i = 0; i < left.size(); i++) {
