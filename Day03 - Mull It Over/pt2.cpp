@@ -2,13 +2,15 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <vector>
 #include <regex>
 
 int main () {
+    // Parse each line of the input
+
     long long total = 0;
     std::ifstream file("input.txt");
     std::string line;
+    // mul\(\d{1,3},\d{1,3}\)|do\(\)|don\'t\(\)
     std::regex mul("mul\\(\\d{1,3},\\d{1,3}\\)|do\\(\\)|don\'t\\(\\)");
     std::regex num("\\d{1,3}");
     bool multiply = true;
