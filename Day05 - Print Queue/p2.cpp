@@ -99,17 +99,15 @@ std::vector<int> correctOrder(std::vector<int> &numbers,
 
     std::set<int> visited;
     for (int i = 0; i < numbers.size(); i++) {
-      std::vector<int> r = rules[numbers[i]];
-      for (int j = 0 ; j < r.size(); j++) {
-        if (visited.find(r[j]) != visited.end()) {
-          // push number to end of &numbers
-          int index = findIndex(r[j], numbers);
+      std::vector<int> numberRules = rules[numbers[i]];
+      for (int j = 0 ; j < numberRules.size(); j++) {
+        if (visited.find(numberRules[j]) != visited.end()) {
+          int index = findIndex(numberRules[j], numbers);
 
           int val = numbers[index];
           numbers.erase(numbers.begin() + index);
           numbers.push_back(val);
           
-          // break out and try again
           i = numbers.size();
           break;
         }
