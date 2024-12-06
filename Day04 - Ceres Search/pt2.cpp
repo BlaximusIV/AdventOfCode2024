@@ -14,7 +14,6 @@ int main () {
     std::ifstream file("input.txt");
     std::string line;
     while (getline(file, line)) {
-        std::istringstream iss(line);
         std::vector<char> vec(line.begin(), line.end());
         puzzle.push_back(vec);
     }
